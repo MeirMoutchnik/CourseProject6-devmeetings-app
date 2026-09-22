@@ -9,6 +9,8 @@
   --accent-hover: #0d9488;
   --danger: #b42318;
   --success: #157a3a;
+  --upcoming: #ea580c;
+  --past: #15803d;
   --radius: 16px;
   --shadow: 0 18px 40px rgba(30, 58, 76, 0.16);
 }
@@ -220,6 +222,15 @@ body::after {
   margin: 0;
   padding: 0.35rem 0.8rem;
   font-size: 0.9rem;
+}
+
+.meeting-upcoming {
+  color: var(--upcoming);
+  font-weight: 600;
+}
+
+.meeting-past {
+  color: var(--past);
 }
 
 .form-error,

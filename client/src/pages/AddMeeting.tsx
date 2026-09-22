@@ -69,6 +69,12 @@ export const AddMeeting = () => {
                 setError('Select a group');
                 return;
             }
+
+            if (meeting.meeting_start < new Date()) {
+                setError('Meeting start must be in the future');
+                return;
+            }
+
             const response = await createMeeting(meeting) as Meeting & { error?: string };
             if (!response?.meeting_code) {
                 setError(response.error ?? 'Meeting not created. Log in first.');
@@ -91,11 +97,11 @@ export const AddMeeting = () => {
                         <option key={group.group_code} value={group.group_code}>{group.group_name}</option>
                     ))}
                 </select>
-                <input type="text" placeholder="Meeting Name" value={meeting.meeting_name} onChange={(e) => setMeeting({ ...meeting, meeting_name: e.target.value })} />
-                <input type="datetime-local" value={toDateTimeLocal(meeting.meeting_start)} onChange={(e) => setMeeting({ ...meeting, meeting_start: new Date(e.target.value) })} />
-                <input type="datetime-local" value={toDateTimeLocal(meeting.meeting_end)} onChange={(e) => setMeeting({ ...meeting, meeting_end: new Date(e.target.value) })} />
-                <input type="text" placeholder="Meeting Description" value={meeting.meeting_description} onChange={(e) => setMeeting({ ...meeting, meeting_description: e.target.value })} />
-                <input type="text" placeholder="Meeting Room" value={meeting.meeting_room} onChange={(e) => setMeeting({ ...meeting, meeting_room: e.target.value })} />
+                <input type="text" placeholder="Meeting Name" value={meeting.meeting_name} onChange={(e) => setMeeting({ ...meeting, meeting_name: e.target.value })} required />
+                <input type="datetime-local" value={toDateTimeLocal(meeting.meeting_start)} onChange={(e) => setMeeting({ ...meeting, meeting_start: new Date(e.target.value) })} required />
+                <input type="datetime-local" value={toDateTimeLocal(meeting.meeting_end)} onChange={(e) => setMeeting({ ...meeting, meeting_end: new Date(e.target.value) })} required />
+                <input type="text" placeholder="Meeting Description" value={meeting.meeting_description} onChange={(e) => setMeeting({ ...meeting, meeting_description: e.target.value })} required />
+                <input type="text" placeholder="Meeting Room" value={meeting.meeting_room} onChange={(e) => setMeeting({ ...meeting, meeting_room: e.target.value })} required />
                 <button type="submit">Add Meeting</button>
             </form>
             {error && <p className="form-error">{error}</p>}

@@ -35,6 +35,14 @@ function formatMeetingDuration(start: Date | string, end: Date | string) {
     return `${hours} h ${minutes} min`;
 }
 
+function isUpcomingMeeting(start: Date | string) {
+    const date = start instanceof Date ? start : new Date(start);
+    if (Number.isNaN(date.getTime())) {
+        return false;
+    }
+    return date.getTime() >= Date.now();
+}
+
 export const Meetings = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -136,7 +144,10 @@ export const Meetings = () => {
                 </thead>
                 <tbody>
                     {meetings.map((meeting) => (
-                        <tr key={meeting.meeting_code}>
+                        <tr
+                            key={meeting.meeting_code}
+                            className={isUpcomingMeeting(meeting.meeting_start) ? 'meeting-upcoming' : 'meeting-past'}
+                        >
                             <td>{meeting.meeting_name}</td>
                             <td>{formatMeetingDate(meeting.meeting_start)}</td>
                             <td>{formatMeetingDate(meeting.meeting_end)}</td>

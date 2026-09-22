@@ -86,11 +86,11 @@ export const UpdateMeeting = () => {
             <form onSubmit={handleSubmit}>
                 <input type="number" placeholder="Meeting Code" value={meeting.meeting_code} readOnly />
                 <input type="number" placeholder="Group Code" value={meeting.group_code} onChange={(e) => setMeeting({ ...meeting, group_code: parseInt(e.target.value) || 0 })} />
-                <input type="text" placeholder="Meeting Name" value={meeting.meeting_name} onChange={(e) => setMeeting({ ...meeting, meeting_name: e.target.value })} />
-                <input type="datetime-local" value={toDateTimeLocal(meeting.meeting_start)} onChange={(e) => setMeeting({ ...meeting, meeting_start: new Date(e.target.value) })} />
-                <input type="datetime-local" value={toDateTimeLocal(meeting.meeting_end)} onChange={(e) => setMeeting({ ...meeting, meeting_end: new Date(e.target.value) })} />
-                <input type="text" placeholder="Description" value={meeting.meeting_description} onChange={(e) => setMeeting({ ...meeting, meeting_description: e.target.value })} />
-                <input type="text" placeholder="Room" value={meeting.meeting_room} onChange={(e) => setMeeting({ ...meeting, meeting_room: e.target.value })} />
+                <input type="text" placeholder="Meeting Name" value={meeting.meeting_name} onChange={(e) => setMeeting({ ...meeting, meeting_name: e.target.value })} required />
+                <input type="datetime-local" value={toDateTimeLocal(meeting.meeting_start)} onChange={(e) => setMeeting({ ...meeting, meeting_start: new Date(e.target.value) })} required />
+                <input type="datetime-local" value={toDateTimeLocal(meeting.meeting_end)} onChange={(e) => setMeeting({ ...meeting, meeting_end: new Date(e.target.value) })} required />
+                <input type="text" placeholder="Description" value={meeting.meeting_description} onChange={(e) => setMeeting({ ...meeting, meeting_description: e.target.value })} required />
+                <input type="text" placeholder="Room" value={meeting.meeting_room} onChange={(e) => setMeeting({ ...meeting, meeting_room: e.target.value })} required />
                 <button type="submit">Save</button>
                 <button type="button" onClick={() => navigate(`/meetings?group_code=${group_code}`)}>Cancel</button>
             </form>
