@@ -1,0 +1,83 @@
+[
+  {
+    "meeting_code": 10,
+    "group_code": 1,
+    "meeting_name": "Sprint Planning",
+    "meeting_start": "2026-09-28T09:00:00",
+    "meeting_end": "2026-09-28T10:30:00",
+    "meeting_description": "Plan React Team sprint tasks and estimates.",
+    "meeting_room": "Room A"
+  },
+  {
+    "meeting_code": 11,
+    "group_code": 1,
+    "meeting_name": "Code Review",
+    "meeting_start": "2026-09-29T14:00:00",
+    "meeting_end": "2026-09-29T15:00:00",
+    "meeting_description": "Review pull requests for the dashboard.",
+    "meeting_room": "Room B"
+  },
+  {
+    "meeting_code": 12,
+    "group_code": 1,
+    "meeting_name": "Retro",
+    "meeting_start": "2026-10-02T16:00:00",
+    "meeting_end": "2026-10-02T17:00:00",
+    "meeting_description": "Sprint retrospective for the React Team.",
+    "meeting_room": "Room A"
+  },
+  {
+    "meeting_code": 13,
+    "group_code": 2,
+    "meeting_name": "Mobile Standup",
+    "meeting_start": "2026-09-28T10:00:00",
+    "meeting_end": "2026-09-28T10:20:00",
+    "meeting_description": "Daily sync for the Mobile Team.",
+    "meeting_room": "Room C"
+  },
+  {
+    "meeting_code": 14,
+    "group_code": 2,
+    "meeting_name": "Release Checklist",
+    "meeting_start": "2026-09-30T16:00:00",
+    "meeting_end": "2026-09-30T17:00:00",
+    "meeting_description": "Go over the Android and iOS release checklist.",
+    "meeting_room": "Room A"
+  },
+  {
+    "meeting_code": 15,
+    "group_code": 2,
+    "meeting_name": "Crash Triage",
+    "meeting_start": "2026-10-01T11:00:00",
+    "meeting_end": "2026-10-01T12:00:00",
+    "meeting_description": "Triage production crash reports.",
+    "meeting_room": "Room C"
+  },
+  {
+    "meeting_code": 16,
+    "group_code": 3,
+    "meeting_name": "Design Critique",
+    "meeting_start": "2026-09-29T11:00:00",
+    "meeting_end": "2026-09-29T12:00:00",
+    "meeting_description": "Review UI mockups for the new group page.",
+    "meeting_room": "Room D"
+  },
+  {
+    "meeting_code": 17,
+    "group_code": 3,
+    "meeting_name": "Accessibility Workshop",
+    "meeting_start": "2026-10-01T13:00:00",
+    "meeting_end": "2026-10-01T15:00:00",
+    "meeting_description": "Workshop on contrast, focus, and keyboard navigation.",
+    "meeting_room": "Room B"
+  },
+  {
+    "meeting_code": 18,
+    "group_code": 3,
+    "meeting_name": "Brand Sync",
+    "meeting_start": "2026-10-02T09:30:00",
+    "meeting_end": "2026-10-02T10:30:00",
+    "meeting_description": "Align colors, type, and component usage.",
+    "meeting_room": "Room D"
+  }
+]
